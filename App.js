@@ -3,9 +3,12 @@ import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 const App = () => {
   const [fonteCarregada] = useFonts({
-    "monoton-regular": require("./assets/fonts/Monoton-Regular.ttf"),
+    monoton: require("./assets/fonts/Monoton-Regular.ttf"),
   });
 
+  /* A condicional abaixo serve apenas para dar um pequeno
+  tempo suficiente para o carregamento do arquivo de fonte
+  antes do return do componente. */
   if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
 
   return (
@@ -45,7 +48,7 @@ const estilos = StyleSheet.create({
   },
   tituloApp: {
     fontSize: 36,
-    fontFamily: "monoton-regular",
+    fontFamily: "monoton",
     color: "#5451a6",
     // fontWeight: "bold",
   },
