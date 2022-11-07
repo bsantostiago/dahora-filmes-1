@@ -34,4 +34,5 @@ Instalação da lib `@expo/vector-icons` para componentes com ícones: `npm i @e
 Referências:
 
 https://docs.expo.dev/guides/icons/
+
 https://icons.expo.fyi/
