@@ -47,3 +47,27 @@ Adição de componente `StatusBar` do `react-native` no App.
 _Obs.: Não use o StatusBar do expo._
 
 Uso do componente `ScrollView` em Privacidade para suporte a rolagem de tela para conteúdos extensos.
+
+## branch 04-recursos-de-navegação
+
+Para gerenciar a navegação entre telas do nosso app, utilizamos um conjunto de diversas libs conhecidas como **React Navigation**.
+
+Site oficial e de documentação: https://reactnavigation.org/docs/getting-started/
+
+Para nosso app, é necessário instalar:
+
+`npm install @react-navigation/native`
+
+`npx expo install react-native-screens react-native-safe-area-context`
+
+`npm install @react-navigation/native-stack`
+
+No `App.js` adicionar os imports:
+
+`import { NavigationContainer } from "@react-navigation/native";`
+
+`import { createNativeStackNavigator } from "@react-navigation/native-stack";`
+
+Também no `App.js` fazemos a programação necessária para uso do `NavigationContainer`, `createNativeStackNavigator` e `Screen` das telas/componentes do nosso app.
+
+Por fim, cada botão (Pressable) existente em `Home` cujo objetivo é navegar para uma tela, deve ter sua prop `onPress` configurada para isso. \*\*Atenção: não esqueça de passar a prop `{navigation}` para o componente `Home`.
