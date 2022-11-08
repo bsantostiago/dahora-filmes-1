@@ -11,7 +11,7 @@ const App = () => {
     dark-content, light-content ou default */
     <>
       <StatusBar />
-      <Privacidade />
+      <Home />
     </>
   );
 };
