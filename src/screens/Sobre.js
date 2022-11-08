@@ -2,7 +2,7 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 const Sobre = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={estilos.container}>
       <Text style={estilos.titulo}>Sobre o app Dá Hora Filmes</Text>
       <Text style={estilos.texto}>
         O <Text style={estilos.nomeApp}>Dá Hora Filmes</Text> é um aplicativo
@@ -28,6 +28,10 @@ const Sobre = () => {
 export default Sobre;
 
 const estilos = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 8,
+  },
   titulo: {
     fontWeight: "bold",
     fontSize: 18,
