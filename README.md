@@ -83,3 +83,13 @@ Por fim, cada botão (Pressable) existente em `Home` cujo objetivo é navegar pa
 - Aplicar useState para captura do que é digitado no campo de formulário
 - Usar um componente de alerta para validação: exibir mensagem na tela caso o usuário clique no botão sem preencher nada no formulário
 - Usar o componente de alerta para mostrar mensagem dizendo "Você procurou pelo filme {nome do filme digitado}..."
+
+### Para resolver o exercício foi necessário:
+
+Componentes: SafeAreaView, View, Text, TextInput (novidade), Button (ou Pressable), Alert (novidade)
+
+Manipulação de eventos do TextInput (onChangeText) e função para captura da digitação.
+
+Manipulação de state (useState) para monitoramento do filme que será buscado.
+
+Manipulação de evento onPress do Button/Pressable para validação de entrada.
