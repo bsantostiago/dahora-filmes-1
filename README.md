@@ -72,9 +72,9 @@ Também no `App.js` fazemos a programação necessária para uso do `NavigationC
 
 Por fim, cada botão (Pressable) existente em `Home` cujo objetivo é navegar para uma tela, deve ter sua prop `onPress` configurada para isso. \*\*Atenção: não esqueça de passar a prop `{navigation}` para o componente `Home`.
 
-## branch 05-exercico-FormBusca
+## branch 05-exercicio-FormBusca
 
-1. Crie uma nova branch chamada `05-exercico-FormBusca`
+1. Crie uma nova branch chamada `05-exercicio-FormBusca`
 2. Abra o componente FormBusca e programe os recursos necessários para a estruturação e estilização semelhante às imagens de referência fornecidas
 
 ### Desafios:
