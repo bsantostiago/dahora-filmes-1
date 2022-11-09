@@ -71,3 +71,15 @@ No `App.js` adicionar os imports:
 Também no `App.js` fazemos a programação necessária para uso do `NavigationContainer`, `createNativeStackNavigator` e `Screen` das telas/componentes do nosso app.
 
 Por fim, cada botão (Pressable) existente em `Home` cujo objetivo é navegar para uma tela, deve ter sua prop `onPress` configurada para isso. \*\*Atenção: não esqueça de passar a prop `{navigation}` para o componente `Home`.
+
+## branch 05-exercico-FormBusca
+
+1. Crie uma nova branch chamada `05-exercico-FormBusca`
+2. Abra o componente FormBusca e programe os recursos necessários para a estruturação e estilização semelhante às imagens de referência fornecidas
+
+### Desafios:
+
+- Usar um componente de campo de entrada
+- Aplicar useState para captura do que é digitado no campo de formulário
+- Usar um componente de alerta para validação: exibir mensagem na tela caso o usuário clique no botão sem preencher nada no formulário
+- Usar o componente de alerta para mostrar mensagem dizendo "Você procurou pelo filme {nome do filme digitado}..."
