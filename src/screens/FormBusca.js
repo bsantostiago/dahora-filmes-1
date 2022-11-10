@@ -11,7 +11,7 @@ import {
 
 import { useState } from "react";
 
-const FormBusca = () => {
+const FormBusca = ({ navigation }) => {
   /* Captura em tempo real do que é digitado no TextInput 
   através do evento onChangeText */
   const filmeDigitado = (valorDigitado) => {
@@ -30,7 +30,8 @@ const FormBusca = () => {
       return Alert.alert("Ops!", "Você deve digitar um filme!");
     }
 
-    Alert.alert("Você procurou por: ", filme);
+    //Alert.alert("Você procurou por: ", filme);
+    navigation.navigate("Resultados", { filme });
   };
 
   return (

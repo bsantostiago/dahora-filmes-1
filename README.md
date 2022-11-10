@@ -93,3 +93,5 @@ Manipulação de eventos do TextInput (onChangeText) e função para captura da 
 Manipulação de state (useState) para monitoramento do filme que será buscado.
 
 Manipulação de evento onPress do Button/Pressable para validação de entrada.
+
+## branch 06-programação-de-busca-na-api-e-resultados
