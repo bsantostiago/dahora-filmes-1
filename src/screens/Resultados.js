@@ -12,6 +12,8 @@ import api from "../services/api";
 import apiKey from "../../apiKey";
 import Loading from "../components/Loading";
 import CardFilme from "../components/CardFilme";
+import ItemSeparador from "../components/ItemSeparador";
+import ItemVazio from "../components/ItemVazio";
 
 const Resultados = ({ route }) => {
   const { filme } = route.params;
@@ -53,6 +55,8 @@ const Resultados = ({ route }) => {
       <View style={estilos.viewFilmes}>
         {!loading && (
           <FlatList
+            ItemSeparatorComponent={ItemSeparador}
+            ListEmptyComponent={ItemVazio}
             data={resultados}
             renderItem={({ item }) => {
               return <CardFilme filme={item} />;
