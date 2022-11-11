@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import api from "../services/api";
+import apiKey from "../../apiKey";
 
 const Resultados = ({ route }) => {
   /* Usamos a prop route (do React Navigation) para
@@ -16,7 +17,7 @@ const Resultados = ({ route }) => {
       try {
         const resposta = await api.get("/search/movie", {
           params: {
-            api_key: "COLOQUE_SUA_API_KEY",
+            api_key: apiKey,
             language: "pt-BR",
             query: filme,
             include_adult: false,
