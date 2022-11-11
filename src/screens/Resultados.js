@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import api from "../services/api";
 import apiKey from "../../apiKey";
@@ -41,7 +41,7 @@ const Resultados = ({ route }) => {
     <SafeAreaView style={estilos.container}>
       <Text>Você buscou por: {filme} </Text>
 
-{/* Sintaxe de if evaluate usando &&
+      {/* Sintaxe de if evaluate usando &&
 Se loading for TRUE, renderize <Loading /> */}
       {loading && <Loading />}
 
@@ -50,7 +50,17 @@ Se loading for TRUE, renderize <Loading /> */}
         do map */}
         {!loading &&
           resultados.map((resultado) => {
-            return <Text key={resultado.id}> {resultado.title} </Text>;
+            return (
+              <View key={resultado.id}>
+                <Image
+                  style={estilos.imagem}
+                  source={{
+                    uri: `https://image.tmdb.org/t/p/original/${resultado.poster_path}`,
+                  }}
+                />
+                <Text> {resultado.title} </Text>
+              </View>
+            );
           })}
       </View>
     </SafeAreaView>
@@ -66,5 +76,8 @@ const estilos = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+  },
+  imagem: {
+    height: 125,
   },
 });
