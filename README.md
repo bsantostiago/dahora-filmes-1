@@ -137,3 +137,17 @@ Instalação da lib axios: `npm install axios`
   - keyExtractor: função que extrai dos dados (`item`) um valor que servirá como `key` para cada registro (em nosso app, `id`)
   - [opcional] ItemSeparatorComponent: aponta para um componente personalizado responsável por servir como um separador de itens (em nosso app, o item é cada filme)
   - [opcional] ListEmptyComponent: aponta para um componente personalizado responsável por exibir uma mensagem para o caso de não existir itens (ou seja, resultados sem filmes)
+
+### Atualizações de 16/11:
+
+- Melhorias na estilização e layout do `CardFilme`
+- Ajustes na estilização do `ItemSeparador`
+
+## branch 09-tela-de-detalhe-do-filme
+
+- Criação e estilização do componente/tela `Detalhes`
+- Adição dele ao `App.js` na pilha de telas (Stack.Screen)
+- Em `CardFilme` usamos o hook `useNavigation` para ter acesso à `navigation.navigate()` e com isso programar a ação de navegar para `Detalhes` usando `onPress` e função `leiaMais` passando objeto `filme` como parâmetro da rota.
+- Em `Detalhes` recuperamos os dados do `filme` via props de `route.params`
+- Estruturação do layout em `Detalhes` usando componente `ImageBackground` e diversos recursos de estilos.
+- No `App.js` adicionamos `options` ao `Stack.Scren` de `Detalhes` para exibição de um botão de retorno à tela `Home`
