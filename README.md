@@ -137,3 +137,8 @@ Instalação da lib axios: `npm install axios`
   - keyExtractor: função que extrai dos dados (`item`) um valor que servirá como `key` para cada registro (em nosso app, `id`)
   - [opcional] ItemSeparatorComponent: aponta para um componente personalizado responsável por servir como um separador de itens (em nosso app, o item é cada filme)
   - [opcional] ListEmptyComponent: aponta para um componente personalizado responsável por exibir uma mensagem para o caso de não existir itens (ou seja, resultados sem filmes)
+
+### Atualizações de 16/11:
+
+- Melhorias na estilização e layout do `CardFilme`
+- Ajustes na estilização do `ItemSeparador`
