@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   ImageBackground,
   ScrollView,
+  Button,
 } from "react-native";
 
 /* Prop de route para acesso aos dados trafegados
