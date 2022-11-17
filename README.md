@@ -151,3 +151,17 @@ Instalação da lib axios: `npm install axios`
 - Em `Detalhes` recuperamos os dados do `filme` via props de `route.params`
 - Estruturação do layout em `Detalhes` usando componente `ImageBackground` e diversos recursos de estilos.
 - No `App.js` adicionamos `options` ao `Stack.Scren` de `Detalhes` para exibição de um botão de retorno à tela `Home`
+
+### Atualizações de 17/11:
+
+- Programação de exibição condicional de imagem alternativa para o caso de um filme não ter foto de fundo e de capa
+- Formatação da data de lançamento do filme para exibição como dia/mês/ano
+
+## branch 10-favoritos-com-async-storage
+
+`AsyncStorage` é uma biblioteca mantida pela equipe do **Expo** que permite armazenar dados offline em formato de string no dispositivo do usuário. É uma biblioteca semelhante à API Web `localStorage` usada em sites.
+
+- Instalação da lib AsynStorage: `npx expo install @react-native-async-storage/async-storage`
+- Em `CardFilme` importamos a lib e programamos as ações necessárias para salvar um filme no storage `@favoritos`
+- Em `Favoritos` importamos a lib e programamos as ações necessárias para carregamento de todos os favoritos salvos
+- Em `Favoritos` programamos as ações necessárias para exclusão de todos os favoritos
