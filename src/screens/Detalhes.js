@@ -8,6 +8,8 @@ import {
   Button,
 } from "react-native";
 
+import fotoAlternativa from "../../assets/images/foto-alternativa.jpg";
+
 /* Prop de route para acesso aos dados trafegados
 entre a navegação entre as telas/rotas */
 const Detalhes = ({ route }) => {
@@ -22,9 +24,13 @@ const Detalhes = ({ route }) => {
       <View style={estilos.container}>
         <ImageBackground
           style={estilos.imagem}
-          source={{
-            uri: `https://image.tmdb.org/t/p/original/${filme.backdrop_path}`,
-          }}
+          source={
+            filme.backdrop_path
+              ? {
+                  uri: `https://image.tmdb.org/t/p/original/${filme.backdrop_path}`,
+                }
+              : fotoAlternativa
+          }
         >
           <Text style={estilos.titulo}> {filme.title} </Text>
         </ImageBackground>
