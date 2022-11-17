@@ -49,9 +49,9 @@ const estilos = StyleSheet.create({
   card: {
     marginVertical: 4,
     flexDirection: "row",
-    borderWidth: 2,
+    borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "black",
+    borderColor: "#5451a6",
     justifyContent: "space-between",
     alignItems: "center",
   },
