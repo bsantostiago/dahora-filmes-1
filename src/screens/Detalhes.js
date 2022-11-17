@@ -39,7 +39,7 @@ const Detalhes = ({ route }) => {
         <View style={estilos.conteudo}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <Text>
-              Avaliação: {filme.vote_average} | Lançamento:{" "}
+              Avaliação: {filme.vote_average} | Lançamento:
               {formataData(filme.release_date)}
             </Text>
             <Text style={estilos.descricao}>
