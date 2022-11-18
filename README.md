@@ -165,3 +165,17 @@ Instalação da lib axios: `npm install axios`
 - Em `CardFilme` importamos a lib e programamos as ações necessárias para salvar um filme no storage `@favoritos`
 - Em `Favoritos` importamos a lib e programamos as ações necessárias para carregamento de todos os favoritos salvos
 - Em `Favoritos` programamos as ações necessárias para exclusão de todos os favoritos
+
+### Atualizações de 18/11:
+
+- Em `Favoritos`:
+
+  - Finalização da estruturação e estilização dos componentes da tela
+  - Programação de função para exclusão de **UM** favorito da lista e do storage com atualização do render na tela
+  - Melhorias na programação da função de exclusão de **TODOS** os favoritos usando `Alert` customizado com botões de cancelamento e confirmação
+  - Programação de função para ver os detalhes de um filme escolhido na lista de favoritos (usamos o hook `useNavigation` passando como parâmetro para a tela de `Detalhes` os dados do filme favorito selecionado)
+
+- Em `CardFilme`:
+  - Programação para verificar se um filme já foi salvo na lista de favoritos usando loop `for/in` com `if`.
+  - `Alert` informando que o filme já foi salvo
+  - `Vibration` para dar feedback sensorial no aparelho
