@@ -100,14 +100,17 @@ const Favoritos = () => {
       <View style={estilos.container}>
         <View style={estilos.cabecalho}>
           <Text>Quantidade: {listaFavoritos.length} </Text>
-          <Pressable
-            style={estilos.botaoExcluirTudo}
-            onPress={excluirFavoritos}
-          >
-            <Text style={estilos.textoExcluirTudo}>
-              <Ionicons name="trash-outline" size={16} /> Excluir Favoritos
-            </Text>
-          </Pressable>
+
+          {listaFavoritos.length > 0 && (
+            <Pressable
+              style={estilos.botaoExcluirTudo}
+              onPress={excluirFavoritos}
+            >
+              <Text style={estilos.textoExcluirTudo}>
+                <Ionicons name="trash-outline" size={16} /> Excluir Favoritos
+              </Text>
+            </Pressable>
+          )}
         </View>
 
         <ScrollView showsVerticalScrollIndicator={false}>
