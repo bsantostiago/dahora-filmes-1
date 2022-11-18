@@ -12,9 +12,12 @@ import {
 } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Favoritos = () => {
   const [listaFavoritos, setListaFavoritos] = useState([]);
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function carregarFavoritos() {
@@ -36,6 +39,10 @@ const Favoritos = () => {
 
     carregarFavoritos();
   }, []);
+
+  const verDetalhes = (filmeSelecionado) => {
+    navigation.navigate("Detalhes", { filme: filmeSelecionado });
+  };
 
   const excluirFavoritos = async () => {
     Alert.alert(
@@ -106,7 +113,13 @@ const Favoritos = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
           {listaFavoritos.map((filmeFavorito, indice) => {
             return (
-              <Pressable key={filmeFavorito.id} style={estilos.itemFilme}>
+              <Pressable
+                // onPress={verDetalhes}
+                // onPress={verDetalhes.bind(this, filmeFavorito)}
+                onPress={() => verDetalhes(filmeFavorito)}
+                key={filmeFavorito.id}
+                style={estilos.itemFilme}
+              >
                 <Text style={estilos.titulo}>{filmeFavorito.title}</Text>
                 <Pressable
                   style={estilos.botaoExcluir}
