@@ -101,5 +101,15 @@ const estilos = StyleSheet.create({
   },
   cabecalho: {
     marginVertical: 8,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
+  botaoExcluirTudo: {
+    borderWidth: 1,
+    borderColor: "red",
+    padding: 8,
+    borderRadius: 4,
+  },
+  textoExcluirTudo: { color: "red" },
 });
