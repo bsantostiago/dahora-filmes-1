@@ -5,6 +5,7 @@ import {
   Button,
   Pressable,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -61,16 +62,18 @@ const Favoritos = () => {
           </Pressable>
         </View>
 
-        {listaFavoritos.map((filmeFavorito) => {
-          return (
-            <Pressable key={filmeFavorito.id} style={estilos.itemFilme}>
-              <Text>{filmeFavorito.title}</Text>
-              <Pressable style={estilos.botaoExcluir}>
-                <Ionicons name="trash" size={24} color="white" />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {listaFavoritos.map((filmeFavorito) => {
+            return (
+              <Pressable key={filmeFavorito.id} style={estilos.itemFilme}>
+                <Text style={estilos.titulo}>{filmeFavorito.title}</Text>
+                <Pressable style={estilos.botaoExcluir}>
+                  <Ionicons name="trash" size={16} color="white" />
+                </Pressable>
               </Pressable>
-            </Pressable>
-          );
-        })}
+            );
+          })}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -95,8 +98,8 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
   botaoExcluir: {
-    backgroundColor: "red",
-    padding: 12,
+    backgroundColor: "#C0392B",
+    padding: 8,
     borderRadius: 4,
   },
   cabecalho: {
@@ -107,9 +110,10 @@ const estilos = StyleSheet.create({
   },
   botaoExcluirTudo: {
     borderWidth: 1,
-    borderColor: "red",
+    borderColor: "#C0392B",
     padding: 8,
     borderRadius: 4,
   },
-  textoExcluirTudo: { color: "red" },
+  textoExcluirTudo: { color: "#C0392B" },
+  titulo: { flex: 1, fontSize: 14 },
 });
