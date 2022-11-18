@@ -18,10 +18,15 @@ const Favoritos = () => {
   useEffect(() => {
     async function carregarFavoritos() {
       try {
+        // Acessar o storage @favoritos e tentar carregar os dados existentes
         const dados = await AsyncStorage.getItem("@favoritos");
+
+        // Havendo dados, transformamos eles em array de objetos
         const filmes = JSON.parse(dados);
+
+        // Se realmente tem dados (ou seja, não é null), atualizamos o componente
         if (dados != null) {
-          setListaFavoritos(filmes);
+          setListaFavoritos(filmes); // state de dados do componente
         }
       } catch (error) {
         console.log("Deu ruim no carregamento: " + error.message);
@@ -32,7 +37,11 @@ const Favoritos = () => {
   }, []);
 
   const excluirFavoritos = async () => {
+    /* Usamos o removeItem para apagar somente os dados
+    dos @favoritos do no nosso app */
     await AsyncStorage.removeItem("@favoritos");
+
+    /* Atualizar o render do componente (removendo da tela os favoritos) */
     setListaFavoritos([]);
     Alert.alert("Favoritos", "Favoritos excluídos!");
   };
@@ -46,7 +55,7 @@ const Favoritos = () => {
         {listaFavoritos.map((filmeFavorito) => {
           return (
             <Pressable key={filmeFavorito.id} style={estilos.itemFilme}>
-              <Text> {filmeFavorito.title} </Text>
+              <Text>{filmeFavorito.title}</Text>
               <Pressable style={estilos.botaoExcluir}>
                 <Ionicons name="trash" size={24} color="white" />
               </Pressable>
@@ -65,12 +74,13 @@ const estilos = StyleSheet.create({
   container: {
     flex: 1,
     padding: 8,
+    backgroundColor: "white",
   },
   itemFilme: {
     padding: 8,
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#ccc",
+    backgroundColor: "#F2F4F4",
     marginVertical: 8,
     borderRadius: 4,
     alignItems: "center",
