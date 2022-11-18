@@ -49,8 +49,17 @@ const Favoritos = () => {
   return (
     <SafeAreaView style={estilos.safeContainer}>
       <View style={estilos.container}>
-        <Text>Quantidade: {listaFavoritos.length} </Text>
-        <Button title="Excluir favoritos" onPress={excluirFavoritos} />
+        <View style={estilos.cabecalho}>
+          <Text>Quantidade: {listaFavoritos.length} </Text>
+          <Pressable
+            style={estilos.botaoExcluirTudo}
+            onPress={excluirFavoritos}
+          >
+            <Text style={estilos.textoExcluirTudo}>
+              <Ionicons name="trash-outline" size={16} /> Excluir Favoritos
+            </Text>
+          </Pressable>
+        </View>
 
         {listaFavoritos.map((filmeFavorito) => {
           return (
@@ -89,5 +98,8 @@ const estilos = StyleSheet.create({
     backgroundColor: "red",
     padding: 12,
     borderRadius: 4,
+  },
+  cabecalho: {
+    marginVertical: 8,
   },
 });
