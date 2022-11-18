@@ -38,13 +38,27 @@ const Favoritos = () => {
   }, []);
 
   const excluirFavoritos = async () => {
-    /* Usamos o removeItem para apagar somente os dados
-    dos @favoritos do no nosso app */
-    await AsyncStorage.removeItem("@favoritos");
-
-    /* Atualizar o render do componente (removendo da tela os favoritos) */
-    setListaFavoritos([]);
-    Alert.alert("Favoritos", "Favoritos excluídos!");
+    Alert.alert(
+      "Excluir TODOS?",
+      "Tem certeza que deseja excluir TODOS os favoritos?",
+      [
+        {
+          text: "Cancelar",
+          onPress: () => {
+            return false;
+          },
+          style: "cancel", // SOMENTE NO iOS
+        },
+        {
+          text: "Sim, to nem aí",
+          onPress: async () => {
+            await AsyncStorage.removeItem("@favoritos");
+            setListaFavoritos([]);
+          },
+          style: "destructive", // SOMENTE NO iOS
+        },
+      ]
+    );
   };
 
   const excluirUmFavorito = async (indice) => {
