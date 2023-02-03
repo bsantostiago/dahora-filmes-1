@@ -33,7 +33,7 @@ const Home = ({ navigation }) => {
           onPress={() => navigation.navigate("FormBusca")}
         >
           <Text style={estilos.textoBotao}>
-            <Ionicons name="search" size={16} color="white" /> Buscar Filmes
+            <Ionicons name="search" size={16} color="white" /> Pesquisar Filmes
           </Text>
         </Pressable>
 
